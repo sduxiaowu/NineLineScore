@@ -1,0 +1,31 @@
+C:\Users\Chris\Desktop\NineLineNotation_v1\System.Windows.Forms.Ribbon\bin\Debug\NineLineNotation.Ribbon.dll
+C:\Users\Chris\Desktop\NineLineNotation_v1\System.Windows.Forms.Ribbon\bin\Debug\NineLineNotation.Ribbon.pdb
+C:\Users\Chris\Desktop\NineLineNotation_v1\System.Windows.Forms.Ribbon\obj\Debug\NineLineNotation.Ribbon.dll
+C:\Users\Chris\Desktop\NineLineNotation_v1\System.Windows.Forms.Ribbon\obj\Debug\NineLineNotation.Ribbon.pdb
+D:\wyy_nineline\NineLineNotation\NineLineNotation.Ribbon\bin\Debug\NineLineNotation.Ribbon.dll
+D:\wyy_nineline\NineLineNotation\NineLineNotation.Ribbon\bin\Debug\NineLineNotation.Ribbon.pdb
+D:\wyy_nineline\NineLineNotation\NineLineNotation.Ribbon\obj\Debug\NineLineNotation.Ribbon.dll
+D:\wyy_nineline\NineLineNotation\NineLineNotation.Ribbon\obj\Debug\NineLineNotation.Ribbon.pdb
+D:\wyy_nineline\NineLineNotation\NineLineNotation.Ribbon\obj\Debug\NineLineNotation.Ribbon.csprojResolveAssemblyReference.cache
+F:\xhy\我的代码\NineLine\NineLineNotation\NineLineNotation.Ribbon\bin\Debug\NineLineNotation.Ribbon.dll
+F:\xhy\我的代码\NineLine\NineLineNotation\NineLineNotation.Ribbon\bin\Debug\NineLineNotation.Ribbon.pdb
+F:\xhy\我的代码\NineLine\NineLineNotation\NineLineNotation.Ribbon\obj\Debug\NineLineNotation.Ribbon.csprojResolveAssemblyReference.cache
+F:\xhy\我的代码\NineLine\NineLineNotation\NineLineNotation.Ribbon\obj\Debug\NineLineNotation.Ribbon.dll
+F:\xhy\我的代码\NineLine\NineLineNotation\NineLineNotation.Ribbon\obj\Debug\NineLineNotation.Ribbon.pdb
+D:\AllCode\Visual Studio 2013\Projects\NineLineNotation\NineLineNotation.Ribbon\bin\Debug\NineLineNotation.Ribbon.dll
+D:\AllCode\Visual Studio 2013\Projects\NineLineNotation\NineLineNotation.Ribbon\bin\Debug\NineLineNotation.Ribbon.pdb
+D:\AllCode\Visual Studio 2013\Projects\NineLineNotation\NineLineNotation.Ribbon\obj\Debug\NineLineNotation.Ribbon.csprojResolveAssemblyReference.cache
+D:\AllCode\Visual Studio 2013\Projects\NineLineNotation\NineLineNotation.Ribbon\obj\Debug\NineLineNotation.Ribbon.dll
+D:\AllCode\Visual Studio 2013\Projects\NineLineNotation\NineLineNotation.Ribbon\obj\Debug\NineLineNotation.Ribbon.pdb
+C:\Users\ritaa\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation.Ribbon\bin\Debug\NineLineNotation.Ribbon.dll
+C:\Users\ritaa\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation.Ribbon\bin\Debug\NineLineNotation.Ribbon.pdb
+C:\Users\ritaa\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation.Ribbon\obj\Debug\NineLineNotation.Ribbon.csprojResolveAssemblyReference.cache
+C:\Users\ritaa\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation.Ribbon\obj\Debug\NineLineNotation.Ribbon.dll
+C:\Users\ritaa\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation.Ribbon\obj\Debug\NineLineNotation.Ribbon.pdb
+C:\Users\Jalen\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation.Ribbon\bin\Debug\NineLineNotation.Ribbon.dll
+C:\Users\Jalen\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation.Ribbon\bin\Debug\NineLineNotation.Ribbon.pdb
+C:\Users\Jalen\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation.Ribbon\obj\Debug\NineLineNotation.Properties.Resources.resources
+C:\Users\Jalen\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation.Ribbon\obj\Debug\NineLineNotation.Ribbon.csproj.GenerateResource.Cache
+C:\Users\Jalen\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation.Ribbon\obj\Debug\NineLineNotation.Ribbon.dll
+C:\Users\Jalen\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation.Ribbon\obj\Debug\NineLineNotation.Ribbon.pdb
+C:\Users\Jalen\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation.Ribbon\obj\Debug\NineLineNotation.Ribbon.csprojResolveAssemblyReference.cache

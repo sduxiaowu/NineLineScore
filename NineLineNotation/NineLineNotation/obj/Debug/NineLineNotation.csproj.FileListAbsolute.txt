@@ -1,0 +1,87 @@
+F:\NineLineNotation_v1\NineLineNotation\bin\Debug\NineLineNotation.exe
+F:\NineLineNotation_v1\NineLineNotation\bin\Debug\NineLineNotation.pdb
+F:\NineLineNotation_v1\NineLineNotation\bin\Debug\System.Windows.Forms.Ribbon.dll
+F:\NineLineNotation_v1\NineLineNotation\bin\Debug\System.Windows.Forms.Ribbon.pdb
+F:\NineLineNotation_v1\NineLineNotation\obj\Debug\NineLineNotation.csprojResolveAssemblyReference.cache
+F:\NineLineNotation_v1\NineLineNotation\obj\Debug\NineLineNotation.BlackForm.resources
+F:\NineLineNotation_v1\NineLineNotation\obj\Debug\NineLineNotation.NotationPanel.resources
+F:\NineLineNotation_v1\NineLineNotation\obj\Debug\NineLineNotation.Properties.Resources.resources
+F:\NineLineNotation_v1\NineLineNotation\obj\Debug\NineLineNotation.MainForm.resources
+F:\NineLineNotation_v1\NineLineNotation\obj\Debug\NineLineNotation.TestForm.resources
+F:\NineLineNotation_v1\NineLineNotation\obj\Debug\NineLineNotation.csproj.GenerateResource.Cache
+F:\NineLineNotation_v1\NineLineNotation\obj\Debug\NineLineNotation.exe
+F:\NineLineNotation_v1\NineLineNotation\obj\Debug\NineLineNotation.pdb
+F:\NineLineNotation_v1\NineLineNotation\obj\Debug\NineLineNotation.TestCanvasForm.resources
+D:\wyy_nineline\NineLineNotation\NineLineNotation\bin\Debug\NineLineNotation.exe
+D:\wyy_nineline\NineLineNotation\NineLineNotation\bin\Debug\NineLineNotation.pdb
+D:\wyy_nineline\NineLineNotation\NineLineNotation\bin\Debug\NineLineNotation.Ribbon.dll
+D:\wyy_nineline\NineLineNotation\NineLineNotation\bin\Debug\NineLineNotation.Ribbon.pdb
+D:\wyy_nineline\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.csprojResolveAssemblyReference.cache
+D:\wyy_nineline\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.NotationPanel.resources
+D:\wyy_nineline\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.Properties.Resources.resources
+D:\wyy_nineline\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.TestCanvasForm.resources
+D:\wyy_nineline\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.TestForm.resources
+D:\wyy_nineline\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.csproj.GenerateResource.Cache
+D:\wyy_nineline\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.exe
+D:\wyy_nineline\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.pdb
+F:\xhy\我的代码\NineLine\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.exe
+F:\xhy\我的代码\NineLine\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.pdb
+F:\xhy\我的代码\NineLine\NineLineNotation\NineLineNotation\bin\Debug\NineLineNotation.exe
+F:\xhy\我的代码\NineLine\NineLineNotation\NineLineNotation\bin\Debug\NineLineNotation.pdb
+F:\xhy\我的代码\NineLine\NineLineNotation\NineLineNotation\bin\Debug\NineLineNotation.Ribbon.dll
+F:\xhy\我的代码\NineLine\NineLineNotation\NineLineNotation\bin\Debug\NineLineNotation.Ribbon.pdb
+F:\xhy\我的代码\NineLine\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.csprojResolveAssemblyReference.cache
+F:\xhy\我的代码\NineLine\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.NotationPanel.resources
+F:\xhy\我的代码\NineLine\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.Properties.Resources.resources
+F:\xhy\我的代码\NineLine\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.TestCanvasForm.resources
+F:\xhy\我的代码\NineLine\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.TestForm.resources
+F:\xhy\我的代码\NineLine\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.csproj.GenerateResource.Cache
+G:\AllCode\Visual Studio 2013\Projects\NineLine\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.exe
+G:\AllCode\Visual Studio 2013\Projects\NineLine\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.pdb
+G:\AllCode\Visual Studio 2013\Projects\NineLine\NineLineNotation\NineLineNotation\bin\Debug\NineLineNotation.exe
+G:\AllCode\Visual Studio 2013\Projects\NineLine\NineLineNotation\NineLineNotation\bin\Debug\NineLineNotation.pdb
+G:\AllCode\Visual Studio 2013\Projects\NineLine\NineLineNotation\NineLineNotation\bin\Debug\NineLineNotation.Ribbon.dll
+G:\AllCode\Visual Studio 2013\Projects\NineLine\NineLineNotation\NineLineNotation\bin\Debug\NineLineNotation.Ribbon.pdb
+G:\AllCode\Visual Studio 2013\Projects\NineLine\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.csprojResolveAssemblyReference.cache
+G:\AllCode\Visual Studio 2013\Projects\NineLine\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.NotationPanel.resources
+G:\AllCode\Visual Studio 2013\Projects\NineLine\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.Properties.Resources.resources
+G:\AllCode\Visual Studio 2013\Projects\NineLine\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.TestCanvasForm.resources
+G:\AllCode\Visual Studio 2013\Projects\NineLine\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.TestForm.resources
+G:\AllCode\Visual Studio 2013\Projects\NineLine\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.csproj.GenerateResource.Cache
+D:\AllCode\Visual Studio 2013\Projects\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.exe
+D:\AllCode\Visual Studio 2013\Projects\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.pdb
+D:\AllCode\Visual Studio 2013\Projects\NineLineNotation\NineLineNotation\bin\Debug\NineLineNotation.exe
+D:\AllCode\Visual Studio 2013\Projects\NineLineNotation\NineLineNotation\bin\Debug\NineLineNotation.pdb
+D:\AllCode\Visual Studio 2013\Projects\NineLineNotation\NineLineNotation\bin\Debug\NineLineNotation.Ribbon.dll
+D:\AllCode\Visual Studio 2013\Projects\NineLineNotation\NineLineNotation\bin\Debug\NineLineNotation.Ribbon.pdb
+D:\AllCode\Visual Studio 2013\Projects\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.csprojResolveAssemblyReference.cache
+D:\AllCode\Visual Studio 2013\Projects\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.NotationPanel.resources
+D:\AllCode\Visual Studio 2013\Projects\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.Properties.Resources.resources
+D:\AllCode\Visual Studio 2013\Projects\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.TestCanvasForm.resources
+D:\AllCode\Visual Studio 2013\Projects\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.TestForm.resources
+D:\AllCode\Visual Studio 2013\Projects\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.csproj.GenerateResource.Cache
+C:\Users\ritaa\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.exe
+C:\Users\ritaa\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.pdb
+C:\Users\ritaa\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation\bin\Debug\NineLineNotation.exe
+C:\Users\ritaa\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation\bin\Debug\NineLineNotation.pdb
+C:\Users\ritaa\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation\bin\Debug\NineLineNotation.Ribbon.dll
+C:\Users\ritaa\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation\bin\Debug\NineLineNotation.Ribbon.pdb
+C:\Users\ritaa\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.csprojResolveAssemblyReference.cache
+C:\Users\ritaa\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.NotationPanel.resources
+C:\Users\ritaa\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.Properties.Resources.resources
+C:\Users\ritaa\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.TestCanvasForm.resources
+C:\Users\ritaa\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.TestForm.resources
+C:\Users\ritaa\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.csproj.GenerateResource.Cache
+C:\Users\Jalen\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation\bin\Debug\NineLineNotation.exe.config
+C:\Users\Jalen\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation\bin\Debug\NineLineNotation.exe
+C:\Users\Jalen\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation\bin\Debug\NineLineNotation.pdb
+C:\Users\Jalen\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation\bin\Debug\NineLineNotation.Ribbon.dll
+C:\Users\Jalen\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation\bin\Debug\NineLineNotation.Ribbon.pdb
+C:\Users\Jalen\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.csprojResolveAssemblyReference.cache
+C:\Users\Jalen\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.NotationPanel.resources
+C:\Users\Jalen\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.Properties.Resources.resources
+C:\Users\Jalen\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.TestCanvasForm.resources
+C:\Users\Jalen\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.TestForm.resources
+C:\Users\Jalen\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.csproj.GenerateResource.Cache
+C:\Users\Jalen\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.exe
+C:\Users\Jalen\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.pdb
