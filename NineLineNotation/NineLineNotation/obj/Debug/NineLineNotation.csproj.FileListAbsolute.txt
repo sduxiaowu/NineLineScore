@@ -85,3 +85,16 @@ C:\Users\Jalen\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation\obj
 C:\Users\Jalen\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.csproj.GenerateResource.Cache
 C:\Users\Jalen\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.exe
 C:\Users\Jalen\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.pdb
+D:\Githup 本地仓库\NineLineNotation\NineLineNotation\bin\Debug\NineLineNotation.exe.config
+D:\Githup 本地仓库\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.exe
+D:\Githup 本地仓库\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.pdb
+D:\Githup 本地仓库\NineLineNotation\NineLineNotation\bin\Debug\NineLineNotation.exe
+D:\Githup 本地仓库\NineLineNotation\NineLineNotation\bin\Debug\NineLineNotation.pdb
+D:\Githup 本地仓库\NineLineNotation\NineLineNotation\bin\Debug\NineLineNotation.Ribbon.dll
+D:\Githup 本地仓库\NineLineNotation\NineLineNotation\bin\Debug\NineLineNotation.Ribbon.pdb
+D:\Githup 本地仓库\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.csprojResolveAssemblyReference.cache
+D:\Githup 本地仓库\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.NotationPanel.resources
+D:\Githup 本地仓库\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.Properties.Resources.resources
+D:\Githup 本地仓库\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.TestCanvasForm.resources
+D:\Githup 本地仓库\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.TestForm.resources
+D:\Githup 本地仓库\NineLineNotation\NineLineNotation\obj\Debug\NineLineNotation.csproj.GenerateResource.Cache

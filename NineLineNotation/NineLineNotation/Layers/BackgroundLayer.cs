@@ -33,7 +33,7 @@ namespace NineLineNotation
             canvas.Graphics.DrawString("NineLineNotation Canvas Test", m_font, m_brush, 0, 0, f);
             canvas.Graphics.ResetTransform();
         }
-        public void Draw(ICanvas canvas, RectangleF unitrect,int start ,int end ,int time)
+        public void Draw(ICanvas canvas, RectangleF unitrect,int start ,int end ,int time,int strong)
         { 
         }
         public bool Enabled

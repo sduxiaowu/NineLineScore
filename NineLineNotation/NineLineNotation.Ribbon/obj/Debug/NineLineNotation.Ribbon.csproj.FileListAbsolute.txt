@@ -29,3 +29,10 @@ C:\Users\Jalen\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation.Rib
 C:\Users\Jalen\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation.Ribbon\obj\Debug\NineLineNotation.Ribbon.dll
 C:\Users\Jalen\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation.Ribbon\obj\Debug\NineLineNotation.Ribbon.pdb
 C:\Users\Jalen\Desktop\NineLineNotation(1)\NineLineNotation\NineLineNotation.Ribbon\obj\Debug\NineLineNotation.Ribbon.csprojResolveAssemblyReference.cache
+D:\Githup 本地仓库\NineLineNotation\NineLineNotation.Ribbon\bin\Debug\NineLineNotation.Ribbon.dll
+D:\Githup 本地仓库\NineLineNotation\NineLineNotation.Ribbon\bin\Debug\NineLineNotation.Ribbon.pdb
+D:\Githup 本地仓库\NineLineNotation\NineLineNotation.Ribbon\obj\Debug\NineLineNotation.Ribbon.csprojResolveAssemblyReference.cache
+D:\Githup 本地仓库\NineLineNotation\NineLineNotation.Ribbon\obj\Debug\NineLineNotation.Properties.Resources.resources
+D:\Githup 本地仓库\NineLineNotation\NineLineNotation.Ribbon\obj\Debug\NineLineNotation.Ribbon.csproj.GenerateResource.Cache
+D:\Githup 本地仓库\NineLineNotation\NineLineNotation.Ribbon\obj\Debug\NineLineNotation.Ribbon.dll
+D:\Githup 本地仓库\NineLineNotation\NineLineNotation.Ribbon\obj\Debug\NineLineNotation.Ribbon.pdb

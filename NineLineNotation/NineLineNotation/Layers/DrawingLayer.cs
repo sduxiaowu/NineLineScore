@@ -129,7 +129,7 @@ namespace NineLineNotation
             }
         }
         //djl
-         public void Draw(ICanvas canvas, RectangleF unitrect,int start,int end,int line){
+         public void Draw(ICanvas canvas, RectangleF unitrect,int start,int end,int line,int strong){
              if (Enabled == false)
                  return;
 
@@ -151,9 +151,9 @@ namespace NineLineNotation
              float bottom = (float)Math.Round(leftpoint.Y / gridY) * gridY;
 
 
-            
 
-             Pen pen = new Pen(Color.Black,2);
+
+             Pen pen = new Pen(Color.FromArgb(255, (250 - strong), (160 - strong), (160 - strong)), 2);
              GraphicsPath path = new GraphicsPath();
              PointF p1;
              PointF p2;

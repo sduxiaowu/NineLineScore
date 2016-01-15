@@ -141,7 +141,7 @@ namespace NineLineNotation
             }
             canvas.Graphics.DrawPath(pen, path);
         }
-        public void Draw(ICanvas canvas, RectangleF unitrect,int start ,int end ,int time)
+        public void Draw(ICanvas canvas, RectangleF unitrect,int start ,int end ,int time,int strong)
         {
 
             if (Enabled == false)

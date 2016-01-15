@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 using System.Runtime.InteropServices;
@@ -64,9 +65,9 @@ namespace NineLineNotation
         }
         //画谱by djl 2015.12 
 
-        public void Paintt(int start,int end,int line){
+        public void Paintt(int start,int end,int line,int strong){
 
-            CanvasCtrl.M_canvas.m_model.ActiveLayer.Draw(CanvasCtrl.M_canvas.dcanvaswrapper, CanvasCtrl.M_canvas.drf,start,end,line);
+            CanvasCtrl.M_canvas.m_model.ActiveLayer.Draw(CanvasCtrl.M_canvas.dcanvaswrapper, CanvasCtrl.M_canvas.drf,start,end,line,strong);
         }
 
         private Color GetRandomColor(Random r)
@@ -322,13 +323,15 @@ namespace NineLineNotation
         static double start_time=0;
         static double end_time=0;
         static int line_length=178;
+        static Dictionary<int, Thread> threadpool=new Dictionary<int,Thread>();
+         
         //声明回调的函数
         public static void FunA(int a, int time)
         {
             tf.label1.Text = a + " " + time;
             int score = (a >> 8) % 256;
             int strong = a >> 16;
-         
+            Thread t;
             double little_time = (double)time / 40.0;
 
             if (start_point == 0) {
@@ -340,35 +343,34 @@ namespace NineLineNotation
             {
 
                 start_time = little_time;
+                int draw_start = (int)((start_time - start_point) % line_length);
+                int big_line = (int)(start_time - start_point) / line_length * 2;
+                int small_line = 0;
+                small_line = 94 - score;
+                t = new Thread(delegate() { threadpaint(big_line, small_line, draw_start,strong); });
+                threadpool.Add(score,t);
+                t.Start();
             }
             else
             {
-                end_time = little_time;
-                int big_line = (int)(start_time-start_point)/ line_length * 2;
-                int draw_start =(int)( (start_time-start_point) % line_length);
+                end_time = little_time;           
                 int draw_end = (int) ( (end_time-start_point) % line_length);
-                int small_line = 0;
-               
-                small_line = 94 - score;
-
-
-
-                if (draw_end < draw_start)
-                {
-                    tf.Paintt(draw_start, line_length, big_line * 30 + small_line);
-                    tf.Paintt(0, draw_end, (big_line + 2) * 30 + small_line);
-                }
-                else
-                {
-
-                    tf.Paintt(draw_start, draw_end, big_line * 30 + small_line);
-                }
-
-                CanvasCtrl.M_canvas.Invalidate();
-
+                t = threadpool[score];
+                threadpool.Remove(score);
+                t.Abort();
             }
 
            
+        }
+        static void threadpaint(int big_line,int small_line,int draw_start,int strong) {
+
+            while (true)
+            {
+                tf.Paintt(draw_start, draw_start + 2, big_line * 30 + small_line,strong);
+                CanvasCtrl.M_canvas.Invalidate();
+                draw_start += 2;
+                Thread.Sleep(100);
+            }
         }
         private void cancelrecord(object sender, EventArgs e)
         {
