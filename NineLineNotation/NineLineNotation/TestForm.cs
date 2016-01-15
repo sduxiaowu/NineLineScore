@@ -317,8 +317,6 @@ namespace NineLineNotation
         static extern IntPtr start();
 
 
-
-
         static double start_point = 0;
         static double start_time=0;
         static double end_time=0;
@@ -341,12 +339,11 @@ namespace NineLineNotation
 
             if (strong != 0)
             {
-
                 start_time = little_time;
                 int draw_start = (int)((start_time - start_point) % line_length);
-                int big_line = (int)(start_time - start_point) / line_length * 2;
+                int big_line = (int)(start_time - start_point) / line_length;
                 int small_line = 0;
-                small_line = 94 - score;
+                small_line = 99 - score;
                 t = new Thread(delegate() { threadpaint(big_line, small_line, draw_start,strong); });
                 threadpool.Add(score,t);
                 t.Start();
@@ -358,15 +355,13 @@ namespace NineLineNotation
                 t = threadpool[score];
                 threadpool.Remove(score);
                 t.Abort();
-            }
-
-           
+            }        
         }
         static void threadpaint(int big_line,int small_line,int draw_start,int strong) {
 
             while (true)
             {
-                tf.Paintt(draw_start, draw_start + 2, big_line * 30 + small_line,strong);
+                tf.Paintt(draw_start, draw_start + 2, big_line * 56 + small_line,strong);
                 CanvasCtrl.M_canvas.Invalidate();
                 draw_start += 2;
                 Thread.Sleep(100);
