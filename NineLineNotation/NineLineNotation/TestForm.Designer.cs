@@ -4081,10 +4081,67 @@ namespace NineLineNotation
             // ribbonPanel4
             // 
             this.ribbonPanel4.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPanel4.Image")));
-            this.ribbonPanel4.Items.Add(this.lst);
-            this.ribbonPanel4.Items.Add(this.symbol_lst);
+           // this.ribbonPanel4.Items.Add(this.lst);
+            //this.ribbonPanel4.Items.Add(this.symbol_lst);
+            this.ribbonPanel4.Items.Add(this.ribbonButton_init);
+            this.ribbonPanel4.Items.Add(this.ribbonButton_startrecord);
+            this.ribbonPanel4.Items.Add(this.ribbonButton_cancelrecord);
             this.ribbonPanel4.Tag = null;
-            this.ribbonPanel4.Text = "Styles";
+            this.ribbonPanel4.Text = "记谱";
+            // 
+            // ribbonButton_init
+            // 
+            this.ribbonButton_init.AltKey = null;
+            this.ribbonButton_init.DropDownArrowDirection = NineLineNotation.RibbonArrowDirection.Down;
+            this.ribbonButton_init.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.ribbonButton_init.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton_init.Image")));
+            this.ribbonButton_init.MaxSizeMode = NineLineNotation.RibbonElementSizeMode.Large;
+            this.ribbonButton_init.Name = "Init";
+            this.ribbonButton_init.ParentItem = null;
+            this.ribbonButton_init.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton_init.SmallImage")));
+            this.ribbonButton_init.Style = NineLineNotation.RibbonButtonStyle.Normal;
+            this.ribbonButton_init.Tag = null;
+            this.ribbonButton_init.Text = "连接";
+            this.ribbonButton_init.ToolTip = null;
+            this.ribbonButton_init.ToolTipImage = null;
+            this.ribbonButton_init.ToolTipTitle = null;
+            this.ribbonButton_init.Click += new System.EventHandler(this.init_Click);
+            // 
+            // ribbonButton_startrecord
+            // 
+            this.ribbonButton_startrecord.AltKey = null;
+            this.ribbonButton_startrecord.DropDownArrowDirection = NineLineNotation.RibbonArrowDirection.Down;
+            this.ribbonButton_startrecord.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.ribbonButton_startrecord.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton_startrecord.Image")));
+            this.ribbonButton_startrecord.MaxSizeMode = NineLineNotation.RibbonElementSizeMode.Large;
+            this.ribbonButton_startrecord.Name = "startrecord";
+            this.ribbonButton_startrecord.ParentItem = null;
+            this.ribbonButton_startrecord.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton_startrecord.SmallImage")));
+            this.ribbonButton_startrecord.Style = NineLineNotation.RibbonButtonStyle.Normal;
+            this.ribbonButton_startrecord.Tag = null;
+            this.ribbonButton_startrecord.Text = "开始录音";
+            this.ribbonButton_startrecord.ToolTip = null;
+            this.ribbonButton_startrecord.ToolTipImage = null;
+            this.ribbonButton_startrecord.ToolTipTitle = null;
+            this.ribbonButton_startrecord.Click += new System.EventHandler(this.startrecord);
+            // 
+            // ribbonButton_cancelrecord
+            // 
+            this.ribbonButton_cancelrecord.AltKey = null;
+            this.ribbonButton_cancelrecord.DropDownArrowDirection = NineLineNotation.RibbonArrowDirection.Down;
+            this.ribbonButton_cancelrecord.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.ribbonButton_cancelrecord.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton_cancelrecord.Image")));
+            this.ribbonButton_cancelrecord.MaxSizeMode = NineLineNotation.RibbonElementSizeMode.Large;
+            this.ribbonButton_cancelrecord.Name = "cancelrecord";
+            this.ribbonButton_cancelrecord.ParentItem = null;
+            this.ribbonButton_cancelrecord.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton_cancelrecord.SmallImage")));
+            this.ribbonButton_cancelrecord.Style = NineLineNotation.RibbonButtonStyle.Normal;
+            this.ribbonButton_cancelrecord.Tag = null;
+            this.ribbonButton_cancelrecord.Text = "结束录音";
+            this.ribbonButton_cancelrecord.ToolTip = null;
+            this.ribbonButton_cancelrecord.ToolTipImage = null;
+            this.ribbonButton_cancelrecord.ToolTipTitle = null;
+            this.ribbonButton_cancelrecord.Click += new System.EventHandler(this.cancelrecord);
             // 
             // lst
             // 
@@ -4246,72 +4303,19 @@ namespace NineLineNotation
             // 
             // ribbonTabView
             // 
-            this.ribbonTabView.Panels.Add(this.ribbonPanel6);
-            this.ribbonTabView.Tag = null;
-            this.ribbonTabView.Text = "视图";
+          //  this.ribbonTabView.Panels.Add(this.ribbonPanel6);
+           // this.ribbonTabView.Tag = null;
+           // this.ribbonTabView.Text = "视图";
             // 
             // ribbonPanel6
             // 
-            this.ribbonPanel6.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPanel6.Image")));
-            this.ribbonPanel6.Items.Add(this.ribbonButton_init);
-            this.ribbonPanel6.Items.Add(this.ribbonButton_startrecord);
-            this.ribbonPanel6.Items.Add(this.ribbonButton_cancelrecord);
-            this.ribbonPanel6.Tag = null;
-            this.ribbonPanel6.Text = "打谱";
-            // 
-            // ribbonButton_init
-            // 
-            this.ribbonButton_init.AltKey = null;
-            this.ribbonButton_init.DropDownArrowDirection = NineLineNotation.RibbonArrowDirection.Down;
-            this.ribbonButton_init.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.ribbonButton_init.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton_init.Image")));
-            this.ribbonButton_init.MaxSizeMode = NineLineNotation.RibbonElementSizeMode.Large;
-            this.ribbonButton_init.Name = "Init";
-            this.ribbonButton_init.ParentItem = null;
-            this.ribbonButton_init.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton_init.SmallImage")));
-            this.ribbonButton_init.Style = NineLineNotation.RibbonButtonStyle.Normal;
-            this.ribbonButton_init.Tag = null;
-            this.ribbonButton_init.Text = "初始化";
-            this.ribbonButton_init.ToolTip = null;
-            this.ribbonButton_init.ToolTipImage = null;
-            this.ribbonButton_init.ToolTipTitle = null;
-            this.ribbonButton_init.Click += new System.EventHandler(this.init_Click);
-            // 
-            // ribbonButton_startrecord
-            // 
-            this.ribbonButton_startrecord.AltKey = null;
-            this.ribbonButton_startrecord.DropDownArrowDirection = NineLineNotation.RibbonArrowDirection.Down;
-            this.ribbonButton_startrecord.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.ribbonButton_startrecord.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton_startrecord.Image")));
-            this.ribbonButton_startrecord.MaxSizeMode = NineLineNotation.RibbonElementSizeMode.Large;
-            this.ribbonButton_startrecord.Name = "startrecord";
-            this.ribbonButton_startrecord.ParentItem = null;
-            this.ribbonButton_startrecord.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton_startrecord.SmallImage")));
-            this.ribbonButton_startrecord.Style = NineLineNotation.RibbonButtonStyle.Normal;
-            this.ribbonButton_startrecord.Tag = null;
-            this.ribbonButton_startrecord.Text = "开始录音";
-            this.ribbonButton_startrecord.ToolTip = null;
-            this.ribbonButton_startrecord.ToolTipImage = null;
-            this.ribbonButton_startrecord.ToolTipTitle = null;
-            this.ribbonButton_startrecord.Click += new System.EventHandler(this.startrecord);
-            // 
-            // ribbonButton_cancelrecord
-            // 
-            this.ribbonButton_cancelrecord.AltKey = null;
-            this.ribbonButton_cancelrecord.DropDownArrowDirection = NineLineNotation.RibbonArrowDirection.Down;
-            this.ribbonButton_cancelrecord.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.ribbonButton_cancelrecord.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton_cancelrecord.Image")));
-            this.ribbonButton_cancelrecord.MaxSizeMode = NineLineNotation.RibbonElementSizeMode.Large;
-            this.ribbonButton_cancelrecord.Name = "cancelrecord";
-            this.ribbonButton_cancelrecord.ParentItem = null;
-            this.ribbonButton_cancelrecord.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton_cancelrecord.SmallImage")));
-            this.ribbonButton_cancelrecord.Style = NineLineNotation.RibbonButtonStyle.Normal;
-            this.ribbonButton_cancelrecord.Tag = null;
-            this.ribbonButton_cancelrecord.Text = "结束录音";
-            this.ribbonButton_cancelrecord.ToolTip = null;
-            this.ribbonButton_cancelrecord.ToolTipImage = null;
-            this.ribbonButton_cancelrecord.ToolTipTitle = null;
-            this.ribbonButton_cancelrecord.Click += new System.EventHandler(this.cancelrecord);
+          //  this.ribbonPanel6.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPanel6.Image")));
+          //  this.ribbonPanel6.Items.Add(this.ribbonButton_init);
+          //  this.ribbonPanel6.Items.Add(this.ribbonButton_startrecord);
+          //  this.ribbonPanel6.Items.Add(this.ribbonButton_cancelrecord);
+         //   this.ribbonPanel6.Tag = null;
+         //   this.ribbonPanel6.Text = "打谱";
+           
             // 
             // ribbonTabHelp
             // 

@@ -261,7 +261,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.canvasCtrl1);
             this.Name = "NotationPanel";
-            this.Size = new System.Drawing.Size(840, 1097);
+            this.Size = new System.Drawing.Size(840, 1188);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

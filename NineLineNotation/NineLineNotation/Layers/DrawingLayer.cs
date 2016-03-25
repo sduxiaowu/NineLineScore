@@ -165,8 +165,16 @@ namespace NineLineNotation
                   p2= canvas.ToScreen(new UnitPoint(leftpoint.X+end, top-line*gridY));
                  
              }
-         
-             canvas.Graphics.DrawLine(pen,p1,p2);
+             try
+             {
+                 canvas.Graphics.DrawLine(pen, p1, p2);
+             }
+             catch (Exception e)
+             {
+
+                 Console.Write(e.Message);
+             }
+             
             
          }
       

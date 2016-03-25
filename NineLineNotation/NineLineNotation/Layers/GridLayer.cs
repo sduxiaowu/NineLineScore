@@ -60,85 +60,98 @@ namespace NineLineNotation
 
            // Console.WriteLine("left=" + left + " ; top=" + top + " ; right=" + right + " ; bottom=" + bottom);
 
+
+            // 蓝色底格
             Pen pen = new Pen(m_color);
             GraphicsPath path = new GraphicsPath();
-
-            // draw vertical lines
-            /*
-            while (left < right)
-            {
-                PointF p1 = canvas.ToScreen(new UnitPoint(left, leftpoint.Y));
-                PointF p2 = canvas.ToScreen(new UnitPoint(left, rightpoint.Y));
-                path.AddLine(p1, p2);
-                path.CloseFigure();
-                left += gridX;
-            }
-            */
-            // draw horizontal lines
-
             while (bottom < top)
             {
-                PointF p1 = canvas.ToScreen(new UnitPoint(leftpoint.X, bottom));
-                PointF p2 = canvas.ToScreen(new UnitPoint(rightpoint.X, bottom));
+                PointF p1 = canvas.ToScreen(new UnitPoint(-20, bottom));
+                PointF p2 = canvas.ToScreen(new UnitPoint(180, bottom));
                 path.AddLine(p1, p2);
                 path.CloseFigure();
                 bottom += gridY;
             }
             canvas.Graphics.DrawPath(pen, path);
 
+
+            //画基架括号
+      //      Image newImage = Image.FromFile("d:\\CSARP\\1.jpg");//建立要绘制的Image图像
+
+
+
+
+            right = 174;
             pen = new Pen(l_color);
             path.Reset();
-            left = 2;
+            left = 10;
+            int pailine = 12;
             top = (float)Math.Round(top);
             while (left < right)
             {
-                bottom = 22;
+                bottom = 10;
                 while (bottom < top)
                 {
                     
                       
                     PointF p1 = canvas.ToScreen(new UnitPoint(leftpoint.X + left, top - bottom));
-                    PointF p2 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 6, top - bottom));
+                    PointF p2 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + pailine, top - bottom));
                     bottom += 1;
                     path.AddLine(p1, p2);
                     path.CloseFigure();
-                    PointF p3 = canvas.ToScreen(new UnitPoint(leftpoint.X + left, top - bottom));
-                    PointF p4 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 3, top - bottom));
+                    for (int i = 0; i < 4; i++)
+                    {
+                        PointF p3 = canvas.ToScreen(new UnitPoint(leftpoint.X + left+3*i, top - bottom));
+                        PointF p4 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 1+3*i, top - bottom));
+                        path.AddLine(p3, p4);
+                        path.CloseFigure();
+                    }
                     bottom += 2;
-                    path.AddLine(p3, p4);
-                    path.CloseFigure();
+                  
                     PointF p5 = canvas.ToScreen(new UnitPoint(leftpoint.X + left, top - bottom));
-                    PointF p6 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 6, top - bottom));
+                    PointF p6 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + pailine, top - bottom));
                     bottom += 2;
                     path.AddLine(p5, p6);
                     path.CloseFigure();
-                    PointF p7 = canvas.ToScreen(new UnitPoint(leftpoint.X + left, top - bottom));
-                    PointF p8 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 3, top - bottom));
+                    for (int i = 0; i < 4; i++)
+                    {
+                        PointF p7 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 3 * i, top - bottom));
+                        PointF p8 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 1+3*i, top - bottom));
+                        path.AddLine(p7, p8);
+                        path.CloseFigure();
+                    }
                     bottom += 1;
-                    path.AddLine(p7, p8);
-                    path.CloseFigure();
+                
                     PointF p9 = canvas.ToScreen(new UnitPoint(leftpoint.X + left, top - bottom));
-                    PointF p10 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 6, top - bottom));
+                    PointF p10 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + pailine, top - bottom));
                     bottom += 2;
                     path.AddLine(p9, p10);
                     path.CloseFigure();
-                    PointF p11 = canvas.ToScreen(new UnitPoint(leftpoint.X + left , top - bottom));
-                    PointF p12 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 3, top - bottom));
+                    for (int i = 0; i < 4; i++)
+                    {
+                        PointF p11 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 3 * i, top - bottom));
+                        PointF p12 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 3 * i+1, top - bottom));
+                       
+                        path.AddLine(p11, p12);
+                        path.CloseFigure();
+                    }
                     bottom += 2;
-                    path.AddLine(p11, p12);
-                    path.CloseFigure();
                     PointF p13 = canvas.ToScreen(new UnitPoint(leftpoint.X + left, top - bottom));
-                    PointF p14 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 6, top - bottom));
+                    PointF p14 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + pailine, top - bottom));
                     bottom += 2;
                     path.AddLine(p13, p14);
                     path.CloseFigure();
-                    PointF p15 = canvas.ToScreen(new UnitPoint(leftpoint.X + left , top - bottom));
-                    PointF p16 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 3, top - bottom));
+                    for (int i = 0; i < 4; i++)
+                    {
+                        PointF p15 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 3 * i, top - bottom));
+                        PointF p16 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 3 * i+1, top - bottom));
+                        
+                        path.AddLine(p15, p16);
+                        path.CloseFigure();
+                    }
                     bottom += 1;
-                    path.AddLine(p15, p16);
-                    path.CloseFigure();
                     PointF p17 = canvas.ToScreen(new UnitPoint(leftpoint.X + left, top - bottom));
-                    PointF p18 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 6, top - bottom));
+                    PointF p18 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + pailine, top - bottom));
                     bottom += 7;
                     path.AddLine(p17, p18);
                     path.CloseFigure();
@@ -146,55 +159,81 @@ namespace NineLineNotation
 
 
                     PointF p19 = canvas.ToScreen(new UnitPoint(leftpoint.X + left, top - bottom));
-                    PointF p20 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 6, top - bottom));
+                    PointF p20 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + pailine, top - bottom));
                     bottom += 2;
                     path.AddLine(p19, p20);
                     path.CloseFigure();
-                    PointF p21 = canvas.ToScreen(new UnitPoint(leftpoint.X + left , top - bottom));
-                    PointF p22 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 3, top - bottom));
+                    for (int i = 0; i < 4; i++)
+                    {
+                        PointF p21 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 3 * i, top - bottom));
+                        PointF p22 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 3 * i+1, top - bottom));
+                        
+                        path.AddLine(p21, p22);
+                        path.CloseFigure();
+                    }
                     bottom += 2;
-                    path.AddLine(p21, p22);
-                    path.CloseFigure();
                     PointF p23 = canvas.ToScreen(new UnitPoint(leftpoint.X + left, top - bottom));
-                    PointF p24 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 6, top - bottom));
+                    PointF p24 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + pailine, top - bottom));
                     bottom += 1;
                     path.AddLine(p23, p24);
                     path.CloseFigure();
-                    PointF p25 = canvas.ToScreen(new UnitPoint(leftpoint.X + left , top - bottom));
-                    PointF p26 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 3, top - bottom));
+                    for (int i = 0; i < 4; i++)
+                    {
+                        PointF p25 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 3 * i, top - bottom));
+                        PointF p26 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 3 * i+1, top - bottom));
+                       
+                        path.AddLine(p25, p26);
+                        path.CloseFigure();
+                    }
                     bottom += 2;
-                    path.AddLine(p25, p26);
-                    path.CloseFigure();
                     PointF p27 = canvas.ToScreen(new UnitPoint(leftpoint.X + left, top - bottom));
-                    PointF p28 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 6, top - bottom));
+                    PointF p28 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + pailine, top - bottom));
                     bottom += 2;
                     path.AddLine(p27, p28);
                     path.CloseFigure();
-                    PointF p29 = canvas.ToScreen(new UnitPoint(leftpoint.X + left , top - bottom));
-                    PointF p30 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 3, top - bottom));
+                    for (int i = 0; i < 4; i++)
+                    {
+                        PointF p29 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 3 * i, top - bottom));
+                        PointF p30 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 3 * i+1, top - bottom));
+                       
+                        path.AddLine(p29, p30);
+                        path.CloseFigure();
+                    }
                     bottom += 1;
-                    path.AddLine(p29, p30);
-                    path.CloseFigure();
                     PointF p31 = canvas.ToScreen(new UnitPoint(leftpoint.X + left, top - bottom));
-                    PointF p32 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 6, top - bottom));
+                    PointF p32 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + pailine, top - bottom));
                     bottom += 2;
                     path.AddLine(p31, p32);
-                    path.CloseFigure();
-                    PointF p33 = canvas.ToScreen(new UnitPoint(leftpoint.X + left , top - bottom));
-                    PointF p34 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 3, top - bottom));
+                    for (int i = 0; i < 4; i++)
+                    {
+                        path.CloseFigure();
+                        PointF p33 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 3 * i, top - bottom));
+                        PointF p34 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 3 * i+1, top - bottom));
+                        
+                        path.AddLine(p33, p34);
+                        path.CloseFigure();
+                    }
                     bottom += 2;
-                    path.AddLine(p33, p34);
-                    path.CloseFigure();
                     PointF p35 = canvas.ToScreen(new UnitPoint(leftpoint.X + left, top - bottom));
-                    PointF p36 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 6, top - bottom));
+                    PointF p36 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + pailine, top - bottom));
                     path.AddLine(p35, p36);
                     path.CloseFigure();
-                    bottom += 22;
+                    bottom += 20;
                 }
-                left += 6;
+                left += 14;
                
             }
             canvas.Graphics.DrawPath(pen, path);
+
+            canvas.Graphics.DrawString("{", new Font("方正兰亭超细黑简体", 105, FontStyle.Regular),  
+                                    new SolidBrush(Color.Black),-37,25);
+            canvas.Graphics.DrawString("{", new Font("方正兰亭超细黑简体", 105, FontStyle.Regular),
+                                    new SolidBrush(Color.Black), -37, 240);
+            canvas.Graphics.DrawString("{", new Font("方正兰亭超细黑简体", 105, FontStyle.Regular),
+                                    new SolidBrush(Color.Black), -37, 455);
+            canvas.Graphics.DrawString("{", new Font("方正兰亭超细黑简体", 105, FontStyle.Regular),
+                                    new SolidBrush(Color.Black), -37, 670);
+                                       
         }
         public void Draw(ICanvas canvas, RectangleF unitrect,int start ,int end ,int time,int strong)
         {

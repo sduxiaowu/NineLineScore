@@ -63,7 +63,7 @@ namespace NineLineNotation
             
 
         }
-        //画谱by djl 2015.12 
+        //画谱by djl 
 
         public void Paintt(int start,int end,int line,int strong){
 
@@ -320,7 +320,9 @@ namespace NineLineNotation
         static double start_point = 0;
         static double start_time=0;
         static double end_time=0;
-        static int line_length=178;
+        static int line_length=174;
+        static int draw_end = 10;
+        static int line_end = 0;
         static Dictionary<int, Thread> threadpool=new Dictionary<int,Thread>();
          
         //声明回调的函数
@@ -340,10 +342,10 @@ namespace NineLineNotation
             if (strong != 0)
             {
                 start_time = little_time;
-                int draw_start = (int)((start_time - start_point) % line_length);
-                int big_line = (int)(start_time - start_point) / line_length;
+               int draw_start = draw_end;
+                int big_line = line_end;
                 int small_line = 0;
-                small_line = 99 - score;
+                small_line = 87 - score;
                 t = new Thread(delegate() { threadpaint(big_line, small_line, draw_start,strong); });
                 threadpool.Add(score,t);
                 t.Start();
@@ -351,19 +353,35 @@ namespace NineLineNotation
             else
             {
                 end_time = little_time;           
-                int draw_end = (int) ( (end_time-start_point) % line_length);
-                t = threadpool[score];
-                threadpool.Remove(score);
-                t.Abort();
+            //    int draw_end = (int) ( (end_time-start_point) % line_length);
+                try
+                {
+                    t = threadpool[score];
+                    threadpool.Remove(score);
+                    t.Abort();
+                }
+                catch (Exception e)
+                {
+
+                    Console.WriteLine(e.Message); 
+                }
+               
             }        
         }
         static void threadpaint(int big_line,int small_line,int draw_start,int strong) {
 
             while (true)
             {
-                tf.Paintt(draw_start, draw_start + 2, big_line * 56 + small_line,strong);
+                if (draw_start > line_length) {
+                    big_line++;
+                    draw_start = 10;
+                    draw_end = 10;
+                    line_end = big_line;
+                }
+                tf.Paintt(draw_start, draw_start + 2, big_line * 54 + small_line,strong);
                 CanvasCtrl.M_canvas.Invalidate();
                 draw_start += 2;
+                draw_end = draw_start;
                 Thread.Sleep(100);
             }
         }
