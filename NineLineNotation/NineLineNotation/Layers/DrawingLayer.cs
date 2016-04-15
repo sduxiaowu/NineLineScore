@@ -128,8 +128,9 @@ namespace NineLineNotation
                 cnt++;
             }
         }
+       
         //djl
-         public void Draw(ICanvas canvas, RectangleF unitrect,int start,int end,int line,int strong){
+         public void Draw(CanvasWrapper canvas, RectangleF unitrect,int start,int end,int line,int strong){
              if (Enabled == false)
                  return;
 
@@ -149,11 +150,7 @@ namespace NineLineNotation
              float top = unitrect.Height + unitrect.Y;
              float right = rightpoint.X;
              float bottom = (float)Math.Round(leftpoint.Y / gridY) * gridY;
-
-
-
-
-             Pen pen = new Pen(Color.FromArgb(255, (250 - strong), (160 - strong), (160 - strong)), 2);
+       
              GraphicsPath path = new GraphicsPath();
              PointF p1;
              PointF p2;
@@ -167,7 +164,10 @@ namespace NineLineNotation
              }
              try
              {
-                 canvas.Graphics.DrawLine(pen, p1, p2);
+                 Line l = new Line(p1, p2, strong);
+                 CanvasCtrl.M_canvas.List.Add(l);
+                 canvas.Graphics.DrawLine(new Pen(l.Color,2), p1, p2);
+                
              }
              catch (Exception e)
              {

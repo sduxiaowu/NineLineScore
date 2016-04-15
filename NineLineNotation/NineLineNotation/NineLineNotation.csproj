@@ -17,6 +17,7 @@
     </UpgradeBackupLocation>
     <OldToolsVersion>2.0</OldToolsVersion>
     <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
     <PublishUrl>发布\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -31,7 +32,6 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -381,6 +381,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ribbonButton_bm4.SmallImage1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ribbonButton_bm1.SmallImage.png" />
+    <None Include="Resources\stop.png" />
+    <None Include="Resources\start.png" />
+    <None Include="Resources\Conect.bmp" />
+    <None Include="Resources\connect.png" />
+    <Content Include="Resources\fower.png" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

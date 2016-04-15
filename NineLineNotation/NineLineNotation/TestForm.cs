@@ -22,7 +22,7 @@ namespace NineLineNotation
         NotationPanel m_panel;
         static TestForm tf;
 
-        public MyDllCall call = FunA;
+        public MyDllCall call = ControlByDLL;
         //djl 委托
         public delegate void MyDllCall(int a, int b);
 
@@ -36,7 +36,7 @@ namespace NineLineNotation
             //m_panel是乐谱页面
             m_panel = new NotationPanel();
             //m_canvas.Dock = DockStyle.Fill;
-            m_panel.Location = new System.Drawing.Point(188, 8);//设置乐谱在整个页面中的位置
+            m_panel.Location = new System.Drawing.Point(188,8);//设置乐谱在整个页面中的位置
             m_panel.Anchor = AnchorStyles.Top;
 
 
@@ -262,15 +262,7 @@ namespace NineLineNotation
                 this.Cursor = cursor; 
 
                 String SenderName = ((RibbonButton)sender).Name;
-                if (SenderName.Equals("Eraser"))
-                {
-                    if (CanvasCtrl.M_canvas != null)
-                    {
-                        CanvasCtrl.M_canvas.CommandEscape();
-                        //this.toolStripStatusLabel1.Text = SenderText;
-                        return;
-                    }
-                }
+                
                 if (SenderName.Equals("Pen"))
                 {
                     if (CanvasCtrl.M_canvas != null)
@@ -279,6 +271,82 @@ namespace NineLineNotation
                     }
                 }
 
+                
+                else if (SenderName.Equals("Eraser"))
+                {
+                    if (CanvasCtrl.M_canvas != null)
+                    {
+                        CanvasCtrl.M_canvas.CommandSelectEraserTool("Eraser");
+                        //this.toolStripStatusLabel1.Text = SenderText;
+                        return;
+                    }
+                }
+                else if (SenderName.Equals("move"))
+                {
+                    if (CanvasCtrl.M_canvas != null)
+                    {
+                        CanvasCtrl.M_canvas.CommandSelectEraserTool("move");
+                        //this.toolStripStatusLabel1.Text = SenderText;
+                        return;
+                    }
+                }
+                else if (SenderName.Equals("chance color"))
+                {
+                    if (CanvasCtrl.M_canvas != null)
+                    {
+                        CanvasCtrl.M_canvas.CommandSelectEraserTool("chance color");
+                        //this.toolStripStatusLabel1.Text = SenderText;
+                        return;
+                    }
+                }
+                else if (SenderName.Equals("Copy"))
+                {
+                    if (CanvasCtrl.M_canvas != null)
+                    {
+                        CanvasCtrl.M_canvas.CommandSelectEraserTool("Copy");
+                        //this.toolStripStatusLabel1.Text = SenderText;
+                        return;
+                    }
+                }
+                else if (SenderName.Equals("Cut"))
+                {
+                    if (CanvasCtrl.M_canvas != null)
+                    {
+                        CanvasCtrl.M_canvas.CommandSelectEraserTool("Cut");
+                        //this.toolStripStatusLabel1.Text = SenderText;
+                        return;
+                    }
+                }
+                else if (SenderName.Equals("Paste"))
+                {
+                    if (CanvasCtrl.M_canvas != null)
+                    {
+                        CanvasCtrl.M_canvas.CommandSelectEraserTool("Paste");
+                        //this.toolStripStatusLabel1.Text = SenderText;
+                        return;
+                    }
+                }
+                else if (SenderName.Equals("StartPoint"))
+                {
+                    if (CanvasCtrl.M_canvas != null)
+                    {
+                        CanvasCtrl.M_canvas.CommandSelectEraserTool("StartPoint");
+                    }
+                }
+                else if (SenderName.Equals("Pai"))
+                {
+                    if (CanvasCtrl.M_canvas != null)
+                    {
+                        CanvasCtrl.M_canvas.CommandSelectEraserTool("Pai");
+                    }
+                }
+                else if (SenderName.Equals("Jie"))
+                {
+                    if (CanvasCtrl.M_canvas != null)
+                    {
+                        CanvasCtrl.M_canvas.CommandSelectEraserTool("Jie");
+                    }
+                }
                 else if (SenderName.Substring(0, 6).Equals("symbol"))
                 {
                     if (CanvasCtrl.M_canvas != null)
@@ -286,6 +354,7 @@ namespace NineLineNotation
                         CanvasCtrl.M_canvas.CommandSelectSymbolTool(SenderName.Substring(6));
                     }
                 }
+               
             }
             if (sender is RibbonPanel)
             {
@@ -324,9 +393,22 @@ namespace NineLineNotation
         static int draw_end = 10;
         static int line_end = 0;
         static Dictionary<int, Thread> threadpool=new Dictionary<int,Thread>();
-         
+         public static void setStartPoint(int s,int line){
+
+             draw_end = (int)((s - 45) / 3.8);
+             if (line >= 42 && line < 177)
+                 line_end = 0;
+             else if (line >= 257 && line < 393)
+                 line_end = 1;
+             else if (line >= 473 && line < 609)
+                 line_end = 2;
+             else if (line >= 690 && line < 820)
+                 line_end = 3;
+          
+
+         }
         //声明回调的函数
-        public static void FunA(int a, int time)
+        public static void ControlByDLL(int a, int time)
         {
             tf.label1.Text = a + " " + time;
             int score = (a >> 8) % 256;

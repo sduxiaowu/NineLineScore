@@ -59,11 +59,12 @@ namespace NineLineNotation
 
 
            // Console.WriteLine("left=" + left + " ; top=" + top + " ; right=" + right + " ; bottom=" + bottom);
-
-
-            // 蓝色底格
             Pen pen = new Pen(m_color);
             GraphicsPath path = new GraphicsPath();
+            // 蓝色底格
+            /*
+           
+           
             while (bottom < top)
             {
                 PointF p1 = canvas.ToScreen(new UnitPoint(-20, bottom));
@@ -74,7 +75,7 @@ namespace NineLineNotation
             }
             canvas.Graphics.DrawPath(pen, path);
 
-
+*/
             //画基架括号
       //      Image newImage = Image.FromFile("d:\\CSARP\\1.jpg");//建立要绘制的Image图像
 
@@ -85,7 +86,7 @@ namespace NineLineNotation
             pen = new Pen(l_color);
             path.Reset();
             left = 10;
-            int pailine = 12;
+            int pailine = 14;
             top = (float)Math.Round(top);
             while (left < right)
             {
@@ -99,7 +100,7 @@ namespace NineLineNotation
                     bottom += 1;
                     path.AddLine(p1, p2);
                     path.CloseFigure();
-                    for (int i = 0; i < 4; i++)
+                    for (int i = 0; i < 5; i++)
                     {
                         PointF p3 = canvas.ToScreen(new UnitPoint(leftpoint.X + left+3*i, top - bottom));
                         PointF p4 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 1+3*i, top - bottom));
@@ -113,7 +114,7 @@ namespace NineLineNotation
                     bottom += 2;
                     path.AddLine(p5, p6);
                     path.CloseFigure();
-                    for (int i = 0; i < 4; i++)
+                    for (int i = 0; i < 5; i++)
                     {
                         PointF p7 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 3 * i, top - bottom));
                         PointF p8 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 1+3*i, top - bottom));
@@ -127,7 +128,7 @@ namespace NineLineNotation
                     bottom += 2;
                     path.AddLine(p9, p10);
                     path.CloseFigure();
-                    for (int i = 0; i < 4; i++)
+                    for (int i = 0; i < 5; i++)
                     {
                         PointF p11 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 3 * i, top - bottom));
                         PointF p12 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 3 * i+1, top - bottom));
@@ -141,7 +142,7 @@ namespace NineLineNotation
                     bottom += 2;
                     path.AddLine(p13, p14);
                     path.CloseFigure();
-                    for (int i = 0; i < 4; i++)
+                    for (int i = 0; i < 5; i++)
                     {
                         PointF p15 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 3 * i, top - bottom));
                         PointF p16 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 3 * i+1, top - bottom));
@@ -163,7 +164,7 @@ namespace NineLineNotation
                     bottom += 2;
                     path.AddLine(p19, p20);
                     path.CloseFigure();
-                    for (int i = 0; i < 4; i++)
+                    for (int i = 0; i < 5; i++)
                     {
                         PointF p21 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 3 * i, top - bottom));
                         PointF p22 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 3 * i+1, top - bottom));
@@ -177,7 +178,7 @@ namespace NineLineNotation
                     bottom += 1;
                     path.AddLine(p23, p24);
                     path.CloseFigure();
-                    for (int i = 0; i < 4; i++)
+                    for (int i = 0; i < 5; i++)
                     {
                         PointF p25 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 3 * i, top - bottom));
                         PointF p26 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 3 * i+1, top - bottom));
@@ -191,7 +192,7 @@ namespace NineLineNotation
                     bottom += 2;
                     path.AddLine(p27, p28);
                     path.CloseFigure();
-                    for (int i = 0; i < 4; i++)
+                    for (int i = 0; i < 5; i++)
                     {
                         PointF p29 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 3 * i, top - bottom));
                         PointF p30 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 3 * i+1, top - bottom));
@@ -204,7 +205,7 @@ namespace NineLineNotation
                     PointF p32 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + pailine, top - bottom));
                     bottom += 2;
                     path.AddLine(p31, p32);
-                    for (int i = 0; i < 4; i++)
+                    for (int i = 0; i < 5; i++)
                     {
                         path.CloseFigure();
                         PointF p33 = canvas.ToScreen(new UnitPoint(leftpoint.X + left + 3 * i, top - bottom));
@@ -224,18 +225,19 @@ namespace NineLineNotation
                
             }
             canvas.Graphics.DrawPath(pen, path);
+            Image newImage = Image.FromFile("..//..//Resources//fower.png");
+           
 
-            canvas.Graphics.DrawString("{", new Font("方正兰亭超细黑简体", 105, FontStyle.Regular),  
-                                    new SolidBrush(Color.Black),-37,25);
-            canvas.Graphics.DrawString("{", new Font("方正兰亭超细黑简体", 105, FontStyle.Regular),
-                                    new SolidBrush(Color.Black), -37, 240);
-            canvas.Graphics.DrawString("{", new Font("方正兰亭超细黑简体", 105, FontStyle.Regular),
-                                    new SolidBrush(Color.Black), -37, 455);
-            canvas.Graphics.DrawString("{", new Font("方正兰亭超细黑简体", 105, FontStyle.Regular),
-                                    new SolidBrush(Color.Black), -37, 670);
+    
+            canvas.Graphics.DrawImage(newImage,10,42,23,138);
+            canvas.Graphics.DrawImage(newImage, 10, 255, 23, 138);
+            canvas.Graphics.DrawImage(newImage, 10, 470, 23, 138);
+            canvas.Graphics.DrawImage(newImage, 10, 686, 23, 138);
+
+           
                                        
         }
-        public void Draw(ICanvas canvas, RectangleF unitrect,int start ,int end ,int time,int strong)
+        public void Draw(CanvasWrapper canvas, RectangleF unitrect,int start ,int end ,int time,int strong)
         {
 
             if (Enabled == false)
@@ -272,7 +274,7 @@ namespace NineLineNotation
                 bottom += gridY;
             }
             
-            if(canvas!=null){canvas.Graphics.DrawPath(pen, path); }
+            if(canvas.Graphics!=null){canvas.Graphics.DrawPath(pen, path); }
         }
             
 

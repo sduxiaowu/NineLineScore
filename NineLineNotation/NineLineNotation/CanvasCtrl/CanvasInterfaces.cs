@@ -85,7 +85,7 @@ namespace NineLineNotation
         
 		//string Id { get; }
 		void Draw(ICanvas canvas, RectangleF unitrect);
-        void Draw(ICanvas canvas, RectangleF unitrect,int start,int end ,int line,int strong);
+        void Draw(CanvasWrapper canvas, RectangleF unitrect,int start,int end ,int line,int strong);
 		ISnapPoint SnapPoint(ICanvas canvas, UnitPoint point, List<IDrawObject> otherobj);
 		IEnumerable<IDrawObject> Objects { get; }
 		bool Enabled { get; set; }

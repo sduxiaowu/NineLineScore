@@ -7,24 +7,229 @@ using System.Text;
 using System.Windows.Forms;
 
 namespace NineLineNotation
+{   
+public class Line
 {
+    PointF p1;
+    PointF p2;
+    public int scope;
+    public bool isRed;
+    Color c;
+    public Line(PointF pa, PointF pb, int s)
+    {
+
+        p1 = pa;
+        p2 = pb;
+        scope = s;
+        isRed = true;
+        c = new Color();
+
+    }
+    public Line(PointF pa, PointF pb, Color c,int s)
+    {
+
+        p1 = pa;
+        p2 = pb;
+        scope = s;
+        isRed = true;
+        this.c = c;
+
+    }
+    public Line(PointF pa, PointF pb, int s, bool b)
+    {
+
+        p1 = pa;
+        p2 = pb;
+        scope = s;
+        isRed = b;
+        c = new Color();
+
+    }
+    public Line(PointF pa, PointF pb, int s, bool b,Color c)
+    {
+
+        p1 = pa;
+        p2 = pb;
+        scope = s;
+        isRed = b;
+        this.c = c;
+
+    }
+    public PointF P1
+    {
+
+        get { return p1; }
+
+    }
+    public int S
+    {
+        get { return scope; }
+    }
+    public void setScope(int s)
+    {
+
+        scope = s;
+    }
+    public void setXY(int x, int y)
+    {
+        p1.X += x;
+        p2.X += x;
+        p1.Y += y;
+        p2.Y += y;
+    }
+    public PointF P2
+    {
+
+        get { return p2; }
+
+    }
+    public Color Color2
+    {
+        get
+        {
+            return c;
+        }
+    }
+    public Color Color
+    {
+        set { c = value; }
+        get
+        {
+            if (isRed)
+            {
+
+                if (scope <= 48)
+                {
+                    c = Color.FromArgb(250, 100, 100);
+                }
+                else if (scope > 48 && scope < 64)
+                {
+
+                    c = Color.FromArgb(250, 60, 60);
+                }
+                else if (scope >= 64 && scope < 72)
+                {
+
+                    c = Color.FromArgb(250, 0, 0);
+                }
+                else if (scope >= 72 && scope < 80)
+                {
+
+                    c = Color.FromArgb(210, 0, 0);
+                }
+                else if (scope >= 80 && scope < 96)
+                {
+
+                    c = Color.FromArgb(160, 0, 0);
+                }
+                else if (scope >= 96 && scope < 112)
+                {
+
+                    c = Color.FromArgb(130, 0, 0);
+                }
+            }
+            else
+            {
+
+
+                if (scope <= 48)
+                {
+                    c = Color.FromArgb(160, 160, 160);
+                }
+                else if (scope > 48 && scope < 64)
+                {
+
+                    c = Color.FromArgb(130, 130, 130);
+                }
+                else if (scope >= 64 && scope < 72)
+                {
+
+                    c = Color.FromArgb(100, 100, 100);
+                }
+                else if (scope >= 72 && scope < 80)
+                {
+
+                    c = Color.FromArgb(80, 80, 80);
+                }
+                else if (scope >= 80 && scope < 96)
+                {
+
+                    c = Color.FromArgb(50, 50, 50);
+                }
+                else if (scope >= 96 && scope < 112)
+                {
+
+                    c = Color.FromArgb(6, 6, 6);
+                }
+            }
+            return c;
+        }
+
+    }
+
+}
+
+//要移动时的选择的区域
+public class MovingRegion
+{
+    //表示区域的矩形
+    Rectangle regionRect = Rectangle.Empty;
+    //区域中所有的线
+    List<Line> linesInRegion = null;
+
+    public MovingRegion(Rectangle rect)
+    {
+        regionRect = rect;
+        linesInRegion = new List<Line>();
+    }
+
+    public List<Line> getLines()
+    {
+        return linesInRegion;
+    }
+
+    //垂直方向移动
+    public void moving(int shiftX, int shiftY)
+    {
+        regionRect.X += shiftX;
+        regionRect.Y += shiftY;
+        foreach (Line l in linesInRegion)
+        {
+            l.setXY(shiftX, shiftY);
+        }
+    }
+
+    //在画板上画出这块区域
+    public void drawRegion(Graphics dc)
+    {
+        //使用XorGdi类的静态方法画出区域矩形
+        XorGdi.DrawRectangle(dc, PenStyles.PS_DASHDOTDOT, 2, Color.LightSeaGreen, regionRect.Left, regionRect.Top, regionRect.Right, regionRect.Bottom);
+        foreach (Line l in linesInRegion)
+        {
+            dc.DrawLine(new Pen(Color.Black), l.P1, l.P2);
+        }
+    }
+}
 
     public struct CanvasWrapper : ICanvas
     {
         CanvasCtrl m_canvas;
         Graphics m_graphics;
         Rectangle m_rect;
+       
         public CanvasWrapper(CanvasCtrl canvas)
         {
             m_canvas = canvas;
             m_graphics = null;
             m_rect = new Rectangle();
+           
         }
         public CanvasWrapper(CanvasCtrl canvas, Graphics graphics, Rectangle clientrect)
         {
             m_canvas = canvas;
             m_graphics = graphics;
             m_rect = clientrect;
+            
         }
         public IModel Model
         {
@@ -34,6 +239,7 @@ namespace NineLineNotation
         {
             get { return m_canvas; }
         }
+       
         
         public void Dispose()
         {
@@ -131,7 +337,22 @@ namespace NineLineNotation
         //djl
         public CanvasWrapper dcanvaswrapper;
         public RectangleF drf;
+        List<Line> lines;
+        List<Line> orlines;
 
+        //选中的移动范围
+        MovingRegion mr = null;
+
+        MovingRegion pr = null;
+        
+        //是否正在进行移动
+        bool moving = false;
+        //是否复制或剪切
+        bool ispaste= false;
+        //上次鼠标的横轴位置
+        int lastX = 0;
+        //上次鼠标的纵轴位置
+        int lastY = 0;
 
         public CanvasCtrl(ICanvasOwner owner, IModel datamodel)
         {
@@ -153,6 +374,8 @@ namespace NineLineNotation
             this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
 
             m_nodeMoveHelper = new NodeMoveHelper(m_canvaswrapper);
+            lines = new List<Line>();
+            orlines = new List<Line>();
         }
 
         public UnitPoint GetMousePoint()
@@ -190,10 +413,19 @@ namespace NineLineNotation
         
         
         }
+        public List<Line> List
+        {
+            get { return lines; }
+        }
+        public List<Line> OrList
+        {
+            get { return orlines; }
+        }
         protected override void OnPaint(PaintEventArgs e)
         {
             //CommonTools.Tracing.StartTrack(Program.TracePaint);
             //ClearPens();
+            
             e.Graphics.SmoothingMode = m_smoothingMode;
             CanvasWrapper dc = new CanvasWrapper(this, e.Graphics, ClientRectangle);
             Rectangle cliprectangle = e.ClipRectangle;
@@ -220,6 +452,7 @@ namespace NineLineNotation
 
                 //djl
                 dcanvaswrapper = dcStatic;
+                
                 drf = r;
                 /*
                 PointF nullPoint = ToScreen(new UnitPoint(0, 0));
@@ -261,6 +494,36 @@ namespace NineLineNotation
             dc.Dispose();
             ClearPens();
             CommonTools.Tracing.EndTrack(Program.TracePaint, "OnPaint complete");*/
+            //重绘线
+            if (CanvasCtrl.M_canvas.List.Count != 0) {
+
+                List<Line> l=CanvasCtrl.M_canvas.List;
+                for (int i = 0; i < l.Count;i++ )
+                {
+                    e.Graphics.DrawLine(new Pen(l[i].Color, 2), l[i].P1, l[i].P2);
+
+                }
+            }
+            //重绘小节线和拍线
+            if (CanvasCtrl.M_canvas.OrList.Count != 0)
+            {
+
+                List<Line> l = CanvasCtrl.M_canvas.OrList;
+                for (int i = 0; i < l.Count; i++)
+                {
+                    e.Graphics.DrawLine(new Pen(l[i].Color2, l[i].S), l[i].P1, l[i].P2);
+
+                }
+            }
+            //绘制移动中的选定区域
+            if (moving)
+            {
+                mr.drawRegion(e.Graphics);
+            }
+            if (ispaste) {
+                if(pr!=null)
+                pr.drawRegion(e.Graphics);
+            }
         }
 
         void RepaintStatic(Rectangle r)
@@ -441,24 +704,30 @@ namespace NineLineNotation
             m_mousedownPoint = new PointF(e.X, e.Y); // used when panning
             m_dragOffset = new PointF(0, 0);
 
-           
+            //移动音符放下
+            if (moving)
+            {
+                moving = false;
+                lines.AddRange(mr.getLines());
+            }
+            if (ispaste)
+            {
+                ispaste = false;
+                List<Line> l=pr.getLines();
+                for (int i = 0; i <l.Count; i++) {
+                    Line l1 = new Line(l[i].P1, l[i].P2, l[i].S, l[i].isRed, l[i].Color);
+                    lines.Add(l1);
+                }
+                  
+            }
+            if (m_drawObjectId.Equals("StartPoint")) {
 
+                TestForm.setStartPoint(e.X,e.Y);
+            }
             UnitPoint mousepoint = ToUnit(m_mousedownPoint);
             if (m_snappoint != null)
                 mousepoint = m_snappoint.SnapPoint;
-/*
-            if (m_commandType == eCommandType.editNode)
-            {
-                bool handled = false;
-                if (m_nodeMoveHelper.HandleMouseDown(mousepoint, ref handled))
-                {
-                    FinishNodeEdit();
-                    base.OnMouseDown(e);
-                    return;
-                }
-            }
- * 
- * */
+
             if (m_commandType == eCommandType.select)
             {
                 bool handled = false;
@@ -559,12 +828,159 @@ namespace NineLineNotation
                 m_dragOffset = new PointF(0, 0);
             }
             */
+            moving = false;
+            ispaste = false;
             List<IDrawObject> hitlist = null;
             Rectangle screenSelRect = Rectangle.Empty;
             if (m_selection != null)
             {
                 screenSelRect = m_selection.ScreenRect();
                 RectangleF selectionRect = m_selection.Selection(m_canvaswrapper);
+                if (CanvasCtrl.M_canvas.m_drawObjectId.Equals("Eraser"))
+                {
+                    List<Line> l=CanvasCtrl.M_canvas.lines;
+                    for (int i = l.Count-1;i>=0; i--) {
+                        if (l[i].P2.X < screenSelRect.Left || l[i].P1.X > screenSelRect.Right || l[i].P1.Y > screenSelRect.Bottom ||
+                            l[i].P1.Y < screenSelRect.Top)
+                        {
+
+                        }
+                        else {
+
+                            lines.RemoveAt(i);
+                            
+                        }
+                    }
+                }
+                else if (CanvasCtrl.M_canvas.m_drawObjectId.Equals("chance color")) {
+                    List<Line> l = CanvasCtrl.M_canvas.lines;
+                    for (int i = l.Count - 1; i >= 0; i--)
+                    {
+                        if (l[i].P2.X < screenSelRect.Left || l[i].P1.X > screenSelRect.Right || l[i].P1.Y > screenSelRect.Bottom ||
+                            l[i].P1.Y < screenSelRect.Top)
+                        {
+
+                        }
+                        else
+                        {
+                            Line l1;
+                            if (lines[i].isRed)
+                            {
+                                 l1= new Line(lines[i].P1, lines[i].P2, 0, false);
+                            }
+                            else {
+                                l1 = new Line(lines[i].P1, lines[i].P2, 0, true);
+                            }
+                            lines.RemoveAt(i);
+                            lines.Add(l1);
+
+                        }
+                    }
+                }
+                else if (CanvasCtrl.M_canvas.m_drawObjectId.Equals("move"))
+                {
+
+                    moving = true;                              //将移动状态设为正在移动
+                    mr = new MovingRegion(screenSelRect);       //新建移动范围
+                    List<Line> selectedLines = mr.getLines();   //选中的线
+                    lastY = e.Y;                                //设置初始纵轴位置
+                    lastX = e.X;                                //设置初始横轴位置
+                    List<Line> l = CanvasCtrl.M_canvas.lines;
+                    for (int i = l.Count - 1; i >= 0; i--)
+                    {
+                        if (l[i].P2.X < screenSelRect.Left || l[i].P1.X > screenSelRect.Right || l[i].P1.Y > screenSelRect.Bottom ||
+                            l[i].P1.Y < screenSelRect.Top)
+                        {
+
+                        }
+                        else
+                        {
+                            Line l1 = new Line(l[i].P1, l[i].P2, l[i].S, l[i].isRed, l[i].Color);
+                            selectedLines.Add(l1);
+                            lines.Remove(l[i]);
+                        }
+                    }
+                }
+                else if (CanvasCtrl.M_canvas.m_drawObjectId.Equals("Cut"))
+                {
+                                                      
+                    pr = new MovingRegion(screenSelRect);       //新建移动范围
+                    List<Line> selectedLines = pr.getLines();   //选中的线
+                    lastY = e.Y;                                //设置初始纵轴位置
+                    lastX = e.X;                                //设置初始横轴位置
+                    List<Line> l = CanvasCtrl.M_canvas.lines;
+                    for (int i = l.Count - 1; i >= 0; i--)
+                    {
+                        if (l[i].P2.X < screenSelRect.Left || l[i].P1.X > screenSelRect.Right || l[i].P1.Y > screenSelRect.Bottom ||
+                            l[i].P1.Y < screenSelRect.Top)
+                        {
+
+                        }
+                        else
+                        {
+                            Line l1 = new Line(l[i].P1, l[i].P2, l[i].S, l[i].isRed, l[i].Color);
+                            selectedLines.Add(l1);
+                            lines.Remove(l[i]);
+                        }
+                    }
+                }
+                else if (CanvasCtrl.M_canvas.m_drawObjectId.Equals("Copy"))
+                {
+                    
+                    pr = new MovingRegion(screenSelRect);       //新建移动范围
+                    List<Line> selectedLines = pr.getLines();   //选中的线
+                    lastY = e.Y;                                //设置初始纵轴位置
+                    lastX = e.X;                                //设置初始横轴位置
+                    List<Line> l = CanvasCtrl.M_canvas.lines;
+                    for (int i = l.Count - 1; i >= 0; i--)
+                    {
+                        if (l[i].P2.X < screenSelRect.Left || l[i].P1.X > screenSelRect.Right || l[i].P1.Y > screenSelRect.Bottom ||
+                            l[i].P1.Y < screenSelRect.Top)
+                        {
+
+                        }
+                        else
+                        {
+                            Line l1 = new Line(l[i].P1,l[i].P2,l[i].S,l[i].isRed,l[i].Color);
+                         
+                            selectedLines.Add(l1);
+                        
+                        }
+                    }
+                }
+                else if (CanvasCtrl.M_canvas.m_drawObjectId.Equals("Paste"))
+                {
+
+                    ispaste = true;
+                }
+                else if (CanvasCtrl.M_canvas.m_drawObjectId.Equals("Pai")) {
+
+                    List<Line> l = CanvasCtrl.M_canvas.orlines;
+                    if(e.Y>=42&&e.Y<177)
+                     l.Add(new Line(new PointF(e.X,40),new PointF(e.X,179),Color.White,5));
+                    else if(e.Y>=257&&e.Y<393)
+                      l.Add(new Line(new PointF(e.X,255),new PointF(e.X,395),Color.White,5));
+                    else if (e.Y >= 473 && e.Y < 609)
+                        l.Add(new Line(new PointF(e.X, 470), new PointF(e.X, 608), Color.White,5));
+                    else if (e.Y >= 690 && e.Y < 820)
+                        l.Add(new Line(new PointF(e.X, 688), new PointF(e.X, 822), Color.White,5));
+                    
+                    DoInvalidate(true);
+                }
+                else if (CanvasCtrl.M_canvas.m_drawObjectId.Equals("Jie"))
+                {
+                    List<Line> l = CanvasCtrl.M_canvas.orlines;
+                    if (e.Y >= 42 && e.Y < 177)
+                        l.Add(new Line(new PointF(e.X, 42), new PointF(e.X, 177), Color.Black,2));
+                    else if (e.Y >= 257 && e.Y < 393)
+                        l.Add(new Line(new PointF(e.X, 257), new PointF(e.X, 393), Color.Black,2));
+                    else if (e.Y >= 473 && e.Y < 609)
+                        l.Add(new Line(new PointF(e.X, 473), new PointF(e.X, 609), Color.Black,2));
+                    else if (e.Y >= 690 && e.Y < 820)
+                        l.Add(new Line(new PointF(e.X, 690), new PointF(e.X, 820), Color.Black,2));
+                    DoInvalidate(true);
+
+                }
                 if (selectionRect != RectangleF.Empty)
                 {
                     // is any selection rectangle. use it for selection
@@ -579,22 +995,7 @@ namespace NineLineNotation
                 }
                 m_selection = null;
             }
-            /*
-            if (m_commandType == eCommandType.select)
-            {
-                if (hitlist != null)
-                    HandleSelection(hitlist);
-            }
-            if (m_commandType == eCommandType.edit && m_editTool != null)
-            {
-                UnitPoint mousepoint = ToUnit(m_mousedownPoint);
-                if (m_snappoint != null)
-                    mousepoint = m_snappoint.SnapPoint;
-                if (screenSelRect != Rectangle.Empty)
-                    m_editTool.SetHitObjects(mousepoint, hitlist);
-                m_editTool.OnMouseUp(m_canvaswrapper, mousepoint, m_snappoint);
-            }
-             * */
+           
             if (m_commandType == eCommandType.draw && m_newObject != null)
             {
                 UnitPoint mousepoint = ToUnit(m_mousedownPoint);
@@ -615,6 +1016,20 @@ namespace NineLineNotation
                 m_selection.SetMousePoint(dc, new PointF(e.X, e.Y));
                 dc.Dispose();
                 return;
+            }
+            if (moving) //如果有选中的区域正在移动
+            {
+                Invalidate();
+                mr.moving(e.X - lastX, e.Y - lastY);
+                lastX = e.X;
+                lastY = e.Y;
+            }
+            if (ispaste) //如果有选中的区域正在移动
+            {
+                Invalidate();
+                pr.moving(e.X - lastX, e.Y - lastY);
+                lastX = e.X;
+                lastY = e.Y;
             }
             UnitPoint mousepoint;
             if (m_commandType == eCommandType.draw || m_commandType == eCommandType.move || m_nodeMoveHelper.IsEmpty == false)
@@ -728,6 +1143,26 @@ namespace NineLineNotation
             //m_moveHelper.HandleCancelMove();
             m_nodeMoveHelper.HandleCancelMove();
             DoInvalidate(dirty);
+            //UpdateCursor();
+        }
+        public void CommandSelectEraserTool(string drawobjectid)
+        {
+            bool dirty = (m_newObject != null) || (m_snappoint != null);
+            m_newObject = null;
+            m_snappoint = null; 
+            //if (m_editTool != null)
+            //    m_editTool.Finished();
+            //m_editTool = null;
+            m_commandType = eCommandType.select;
+            //m_moveHelper.HandleCancelMove();
+            m_drawObjectId = drawobjectid;
+            m_nodeMoveHelper.HandleCancelMove();
+            DoInvalidate(dirty);
+            ispaste = false;
+            moving = false;
+            if(drawobjectid.Equals("Paste")){
+                ispaste = true;
+            }
             //UpdateCursor();
         }
     }

@@ -64,11 +64,14 @@ namespace NineLineNotation
             this.ribbonPanel1 = new NineLineNotation.RibbonPanel();
             this.ribbonButton_copy = new NineLineNotation.RibbonButton();
             this.ribbonButtonCut = new NineLineNotation.RibbonButton();
+            this.ribbonButtonPai = new NineLineNotation.RibbonButton();
+            this.ribbonButtonJie = new NineLineNotation.RibbonButton();
             this.ribbonButton_paste = new NineLineNotation.RibbonButton();
             this.ribbonPanelPaint = new NineLineNotation.RibbonPanel();
             this.ribbonButton_eraser = new NineLineNotation.RibbonButton();
             this.ribbonButton_pen = new NineLineNotation.RibbonButton();
             this.ribbonPanel2 = new NineLineNotation.RibbonPanel();
+            this.ribbonPanel21 = new NineLineNotation.RibbonPanel();
             this.ribbonItemGroup1 = new NineLineNotation.RibbonItemGroup();
             this.ribbonComboBox_speedvarying = new NineLineNotation.RibbonComboBox();
             this.ribbonButton_rall = new NineLineNotation.RibbonButton();
@@ -866,12 +869,15 @@ namespace NineLineNotation
             // 
             // ribbonTab1
             // 
-            this.ribbonTab1.Panels.Add(this.ribbonPanel1);
-            this.ribbonTab1.Panels.Add(this.ribbonPanelPaint);
-            this.ribbonTab1.Panels.Add(this.ribbonPanel2);
-            this.ribbonTab1.Panels.Add(this.ribbonPanel3);
             this.ribbonTab1.Panels.Add(this.ribbonPanel4);
+            this.ribbonTab1.Panels.Add(this.ribbonPanelPaint);
             this.ribbonTab1.Panels.Add(this.ribbonPanel5);
+            this.ribbonTab1.Panels.Add(this.ribbonPanel21);
+            this.ribbonTab1.Panels.Add(this.ribbonPanel1);
+            this.ribbonTab1.Panels.Add(this.ribbonPanel3);
+          
+            this.ribbonTab1.Panels.Add(this.ribbonPanel2);
+           
             this.ribbonTab1.Tag = null;
             this.ribbonTab1.Text = "编辑";
             // 
@@ -890,7 +896,7 @@ namespace NineLineNotation
             this.ribbonButton_copy.AltKey = null;
             this.ribbonButton_copy.DropDownArrowDirection = NineLineNotation.RibbonArrowDirection.Down;
             this.ribbonButton_copy.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.ribbonButton_copy.Enabled = false;
+            this.ribbonButton_copy.Enabled = true;
             this.ribbonButton_copy.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton_copy.Image")));
             this.ribbonButton_copy.MaxSizeMode = NineLineNotation.RibbonElementSizeMode.Medium;
             this.ribbonButton_copy.Name = "Copy";
@@ -902,13 +908,14 @@ namespace NineLineNotation
             this.ribbonButton_copy.ToolTip = null;
             this.ribbonButton_copy.ToolTipImage = null;
             this.ribbonButton_copy.ToolTipTitle = null;
+            this.ribbonButton_copy.Click += new System.EventHandler(this.OnToolSelect);
             // 
             // ribbonButtonCut
             // 
             this.ribbonButtonCut.AltKey = null;
             this.ribbonButtonCut.DropDownArrowDirection = NineLineNotation.RibbonArrowDirection.Down;
             this.ribbonButtonCut.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.ribbonButtonCut.Enabled = false;
+            this.ribbonButtonCut.Enabled = true;
             this.ribbonButtonCut.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButtonCut.Image")));
             this.ribbonButtonCut.MaxSizeMode = NineLineNotation.RibbonElementSizeMode.Medium;
             this.ribbonButtonCut.Name = "Cut";
@@ -920,6 +927,7 @@ namespace NineLineNotation
             this.ribbonButtonCut.ToolTip = null;
             this.ribbonButtonCut.ToolTipImage = null;
             this.ribbonButtonCut.ToolTipTitle = null;
+            this.ribbonButtonCut.Click += new System.EventHandler(this.OnToolSelect);
             // 
             // ribbonButton_paste
             // 
@@ -937,6 +945,7 @@ namespace NineLineNotation
             this.ribbonButton_paste.ToolTip = null;
             this.ribbonButton_paste.ToolTipImage = null;
             this.ribbonButton_paste.ToolTipTitle = null;
+            this.ribbonButton_paste.Click += new System.EventHandler(this.OnToolSelect);
             // 
             // ribbonPanelPaint
             // 
@@ -992,6 +1001,90 @@ namespace NineLineNotation
             this.ribbonPanel2.Tag = null;
             this.ribbonPanel2.Text = "情感选择";
             this.ribbonPanel2.Click += new System.EventHandler(this.OnToolSelect);
+            // 
+            // ribbonButtonCut
+            // 
+            this.ribbonButtonCut.AltKey = null;
+            this.ribbonButtonCut.DropDownArrowDirection = NineLineNotation.RibbonArrowDirection.Down;
+            this.ribbonButtonCut.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.ribbonButtonCut.Enabled = true;
+            this.ribbonButtonCut.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButtonCut.Image")));
+            this.ribbonButtonCut.MaxSizeMode = NineLineNotation.RibbonElementSizeMode.Medium;
+            this.ribbonButtonCut.Name = "Cut";
+            this.ribbonButtonCut.ParentItem = null;
+            this.ribbonButtonCut.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButtonCut.SmallImage")));
+            this.ribbonButtonCut.Style = NineLineNotation.RibbonButtonStyle.Normal;
+            this.ribbonButtonCut.Tag = null;
+            this.ribbonButtonCut.Text = "Cut";
+            this.ribbonButtonCut.ToolTip = null;
+            this.ribbonButtonCut.ToolTipImage = null;
+            this.ribbonButtonCut.ToolTipTitle = null;
+            this.ribbonButtonCut.Click += new System.EventHandler(this.OnToolSelect);
+            // 
+            // ribbonButton_paste
+            // 
+            this.ribbonButton_paste.AltKey = null;
+            this.ribbonButton_paste.DropDownArrowDirection = NineLineNotation.RibbonArrowDirection.Down;
+            this.ribbonButton_paste.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.ribbonButton_paste.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton_paste.Image")));
+            this.ribbonButton_paste.MaxSizeMode = NineLineNotation.RibbonElementSizeMode.Large;
+            this.ribbonButton_paste.Name = "Paste";
+            this.ribbonButton_paste.ParentItem = null;
+            this.ribbonButton_paste.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton_paste.SmallImage")));
+            this.ribbonButton_paste.Style = NineLineNotation.RibbonButtonStyle.Normal;
+            this.ribbonButton_paste.Tag = null;
+            this.ribbonButton_paste.Text = "Paste";
+            this.ribbonButton_paste.ToolTip = null;
+            this.ribbonButton_paste.ToolTipImage = null;
+            this.ribbonButton_paste.ToolTipTitle = null;
+            this.ribbonButton_paste.Click += new System.EventHandler(this.OnToolSelect); // 
+            // 
+            // 拍线
+            this.ribbonButtonPai.AltKey = null;
+            this.ribbonButtonPai.DropDownArrowDirection = NineLineNotation.RibbonArrowDirection.Down;
+            this.ribbonButtonPai.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.ribbonButtonPai.Enabled = true;
+            this.ribbonButtonPai.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton_bm1.SmallImage")));
+            this.ribbonButtonPai.MaxSizeMode = NineLineNotation.RibbonElementSizeMode.Medium;
+            this.ribbonButtonPai.Name = "Pai";
+            this.ribbonButtonPai.ParentItem = null;
+            this.ribbonButtonPai.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton_bm1.SmallImage")));
+            this.ribbonButtonPai.Style = NineLineNotation.RibbonButtonStyle.Normal;
+            this.ribbonButtonPai.Tag = null;
+            this.ribbonButtonPai.Text = "拍线";
+            this.ribbonButtonPai.ToolTip = null;
+            this.ribbonButtonPai.ToolTipImage = null;
+            this.ribbonButtonPai.ToolTipTitle = null;
+            this.ribbonButtonPai.Click += new System.EventHandler(this.OnToolSelect);
+            // 
+            // 小节线
+            // 
+            this.ribbonButtonJie.AltKey = null;
+            this.ribbonButtonJie.DropDownArrowDirection = NineLineNotation.RibbonArrowDirection.Down;
+            this.ribbonButtonJie.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.ribbonButtonJie.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton_bm1.SmallImage")));
+            this.ribbonButtonJie.MaxSizeMode = NineLineNotation.RibbonElementSizeMode.Large;
+            this.ribbonButtonJie.Name = "Jie";
+            this.ribbonButtonJie.ParentItem = null;
+            this.ribbonButtonJie.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton_bm1.SmallImage")));
+            this.ribbonButtonJie.Style = NineLineNotation.RibbonButtonStyle.Normal;
+            this.ribbonButtonJie.Tag = null;
+            this.ribbonButtonJie.Text = "小节线";
+            this.ribbonButtonJie.ToolTip = null;
+            this.ribbonButtonJie.ToolTipImage = null;
+            this.ribbonButtonJie.ToolTipTitle = null;
+            this.ribbonButtonJie.Click += new System.EventHandler(this.OnToolSelect);
+
+
+            // ribbonPanel21
+            // 
+            this.ribbonPanel21.FlowsTo = NineLineNotation.RibbonPanelFlowDirection.Right;
+            this.ribbonPanel21.Items.Add(this.ribbonButtonJie);
+            this.ribbonPanel21.Items.Add(this.ribbonButtonPai);
+            
+            this.ribbonPanel21.Tag = null;
+            this.ribbonPanel21.Text = "拍线和小节线";
+            this.ribbonPanel21.Click += new System.EventHandler(this.OnToolSelect);
             // 
             // ribbonItemGroup1
             // 
@@ -4094,14 +4187,14 @@ namespace NineLineNotation
             this.ribbonButton_init.AltKey = null;
             this.ribbonButton_init.DropDownArrowDirection = NineLineNotation.RibbonArrowDirection.Down;
             this.ribbonButton_init.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.ribbonButton_init.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton_init.Image")));
+            this.ribbonButton_init.Image = ((System.Drawing.Image)(resources.GetObject("connect")));
             this.ribbonButton_init.MaxSizeMode = NineLineNotation.RibbonElementSizeMode.Large;
             this.ribbonButton_init.Name = "Init";
             this.ribbonButton_init.ParentItem = null;
-            this.ribbonButton_init.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton_init.SmallImage")));
+            this.ribbonButton_init.SmallImage = ((System.Drawing.Image)(resources.GetObject("connect")));
             this.ribbonButton_init.Style = NineLineNotation.RibbonButtonStyle.Normal;
             this.ribbonButton_init.Tag = null;
-            this.ribbonButton_init.Text = "连接";
+            this.ribbonButton_init.Text = "connect";
             this.ribbonButton_init.ToolTip = null;
             this.ribbonButton_init.ToolTipImage = null;
             this.ribbonButton_init.ToolTipTitle = null;
@@ -4112,14 +4205,14 @@ namespace NineLineNotation
             this.ribbonButton_startrecord.AltKey = null;
             this.ribbonButton_startrecord.DropDownArrowDirection = NineLineNotation.RibbonArrowDirection.Down;
             this.ribbonButton_startrecord.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.ribbonButton_startrecord.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton_startrecord.Image")));
+            this.ribbonButton_startrecord.Image = ((System.Drawing.Image)(resources.GetObject("start")));
             this.ribbonButton_startrecord.MaxSizeMode = NineLineNotation.RibbonElementSizeMode.Large;
             this.ribbonButton_startrecord.Name = "startrecord";
             this.ribbonButton_startrecord.ParentItem = null;
-            this.ribbonButton_startrecord.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton_startrecord.SmallImage")));
+            this.ribbonButton_startrecord.SmallImage = ((System.Drawing.Image)(resources.GetObject("start")));
             this.ribbonButton_startrecord.Style = NineLineNotation.RibbonButtonStyle.Normal;
             this.ribbonButton_startrecord.Tag = null;
-            this.ribbonButton_startrecord.Text = "开始录音";
+            this.ribbonButton_startrecord.Text = "start";
             this.ribbonButton_startrecord.ToolTip = null;
             this.ribbonButton_startrecord.ToolTipImage = null;
             this.ribbonButton_startrecord.ToolTipTitle = null;
@@ -4130,14 +4223,14 @@ namespace NineLineNotation
             this.ribbonButton_cancelrecord.AltKey = null;
             this.ribbonButton_cancelrecord.DropDownArrowDirection = NineLineNotation.RibbonArrowDirection.Down;
             this.ribbonButton_cancelrecord.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.ribbonButton_cancelrecord.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton_cancelrecord.Image")));
+            this.ribbonButton_cancelrecord.Image = ((System.Drawing.Image)(resources.GetObject("stop")));
             this.ribbonButton_cancelrecord.MaxSizeMode = NineLineNotation.RibbonElementSizeMode.Large;
             this.ribbonButton_cancelrecord.Name = "cancelrecord";
             this.ribbonButton_cancelrecord.ParentItem = null;
-            this.ribbonButton_cancelrecord.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton_cancelrecord.SmallImage")));
+            this.ribbonButton_cancelrecord.SmallImage = ((System.Drawing.Image)(resources.GetObject("stop")));
             this.ribbonButton_cancelrecord.Style = NineLineNotation.RibbonButtonStyle.Normal;
             this.ribbonButton_cancelrecord.Tag = null;
-            this.ribbonButton_cancelrecord.Text = "结束录音";
+            this.ribbonButton_cancelrecord.Text = "stop";
             this.ribbonButton_cancelrecord.ToolTip = null;
             this.ribbonButton_cancelrecord.ToolTipImage = null;
             this.ribbonButton_cancelrecord.ToolTipTitle = null;
@@ -4241,7 +4334,7 @@ namespace NineLineNotation
             this.ribbonButton49.DropDownItems.Add(this.ribbonButton50);
             this.ribbonButton49.DropDownItems.Add(this.ribbonButton51);
             this.ribbonButton49.DropDownItems.Add(this.ribbonButton52);
-            this.ribbonButton49.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton49.Image")));
+            this.ribbonButton49.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton49.SmallImage")));
             this.ribbonButton49.MaxSizeMode = NineLineNotation.RibbonElementSizeMode.Medium;
             this.ribbonButton49.Name = null;
             this.ribbonButton49.ParentItem = null;
@@ -4258,48 +4351,51 @@ namespace NineLineNotation
             this.ribbonButton50.AltKey = null;
             this.ribbonButton50.DropDownArrowDirection = NineLineNotation.RibbonArrowDirection.Left;
             this.ribbonButton50.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.ribbonButton50.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton50.Image")));
-            this.ribbonButton50.Name = null;
+            this.ribbonButton50.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton49.SmallImage")));
+            this.ribbonButton50.Name = "move";
             this.ribbonButton50.ParentItem = null;
             this.ribbonButton50.SmallImage = global::NineLineNotation.Properties.Resources.pageblank16;
             this.ribbonButton50.Style = NineLineNotation.RibbonButtonStyle.Normal;
             this.ribbonButton50.Tag = null;
-            this.ribbonButton50.Text = "Select everything";
+            this.ribbonButton50.Text = "move";
             this.ribbonButton50.ToolTip = null;
             this.ribbonButton50.ToolTipImage = null;
             this.ribbonButton50.ToolTipTitle = null;
+            this.ribbonButton50.Click += new System.EventHandler(this.OnToolSelect);
             // 
             // ribbonButton51
             // 
             this.ribbonButton51.AltKey = null;
             this.ribbonButton51.DropDownArrowDirection = NineLineNotation.RibbonArrowDirection.Left;
             this.ribbonButton51.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.ribbonButton51.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton51.Image")));
-            this.ribbonButton51.Name = null;
+            this.ribbonButton51.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton49.SmallImage")));
+            this.ribbonButton51.Name = "chance color";
             this.ribbonButton51.ParentItem = null;
             this.ribbonButton51.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton51.SmallImage")));
             this.ribbonButton51.Style = NineLineNotation.RibbonButtonStyle.Normal;
             this.ribbonButton51.Tag = null;
-            this.ribbonButton51.Text = "Select Text";
+            this.ribbonButton51.Text = "chance color";
             this.ribbonButton51.ToolTip = null;
             this.ribbonButton51.ToolTipImage = null;
             this.ribbonButton51.ToolTipTitle = null;
+            this.ribbonButton51.Click += new System.EventHandler(this.OnToolSelect);
             // 
             // ribbonButton52
             // 
             this.ribbonButton52.AltKey = null;
             this.ribbonButton52.DropDownArrowDirection = NineLineNotation.RibbonArrowDirection.Left;
             this.ribbonButton52.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.ribbonButton52.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton52.Image")));
-            this.ribbonButton52.Name = null;
+            this.ribbonButton52.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton49.SmallImage")));
+            this.ribbonButton52.Name = "StartPoint";
             this.ribbonButton52.ParentItem = null;
-            this.ribbonButton52.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton52.SmallImage")));
+            this.ribbonButton52.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton51.SmallImage")));
             this.ribbonButton52.Style = NineLineNotation.RibbonButtonStyle.Normal;
             this.ribbonButton52.Tag = null;
-            this.ribbonButton52.Text = "Select text with similar format";
+            this.ribbonButton52.Text = "Select StartingPoint";
             this.ribbonButton52.ToolTip = null;
             this.ribbonButton52.ToolTipImage = null;
             this.ribbonButton52.ToolTipTitle = null;
+            this.ribbonButton52.Click += new System.EventHandler(this.OnToolSelect);
             // 
             // ribbonTabView
             // 
@@ -5441,6 +5537,10 @@ namespace NineLineNotation
         private NineLineNotation.RibbonPanel ribbonPanelPaint;
 
         private NineLineNotation.RibbonButton ribbonButtonCut;
+        private NineLineNotation.RibbonPanel ribbonPanel21;
+            private NineLineNotation.RibbonButton ribbonButtonPai;
+
+        private NineLineNotation.RibbonButton ribbonButtonJie;
         private RibbonPanel ribbonPanel6;
         private RibbonPanel ribbonPanel7;
         private System.Windows.Forms.Label label1;
